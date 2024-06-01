@@ -22,6 +22,7 @@ from plotly.subplots import make_subplots
 import e3x
 
 warnings.simplefilter(action="ignore", category=FutureWarning)
+jax.devices()
 
 
 def create_loss_plot(
@@ -520,7 +521,7 @@ tail_str = (
 # ---- Training hyperparameters ----
 num_train = 4000
 num_valid = 1000
-num_epochs = 5000
+num_epochs = 1
 learning_rate = 0.001
 forces_weight = 0.9
 batch_size = 100
