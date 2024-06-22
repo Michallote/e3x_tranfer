@@ -654,3 +654,18 @@ if __name__ == "__main__":
 
         print("Experiment completed and logged with MLflow.")
         mlflow.end_run()
+
+
+import pickle
+
+with open("best_model_params_test.pkl", "rb") as file:
+    loaded_params = pickle.load(file)
+loaded_params["hyperparameters"] = {
+    "features": 32,
+    "max_degree": 2,
+    "num_iterations": 3,
+    "num_basis_functions": 16,
+    "cutoff": 5.0,
+}
+with open("best_model_params_test_mode.pkl", "wb") as file:
+    pickle.dump(loaded_params, file)
